@@ -1,14 +1,11 @@
+server:
+  port: 8085
 spring:
-   application:
-         name: Config-Default
-
-eureka:
-   client:
-   register-with-eureka: false
-eureka:
-  client:
-  fetch-registry: false
-  service-url:
-     defaultZone: http://localhost:8761/eureka
-
-
+  application:
+    name: Config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SoumyaMaharana-JavaFullStack/microservice-config
+          clone-on-start: true
